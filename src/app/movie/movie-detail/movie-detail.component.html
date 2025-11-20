@@ -9,10 +9,6 @@
 
   <h3>Generos</h3>
   <ol>
-    @for(genero of movie.generos; track genero){
-    <li>
-      {{ genero }}
-    </li>
-    }
+    <li *ngFor="let genero of movie.generos">{{ genero }}</li>
   </ol>
 </div>

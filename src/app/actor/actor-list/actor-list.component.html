@@ -1,9 +1,6 @@
 <ul>
-  @for (actor of actors; track actor.nombre){
-
-  <li>
+  <li *ngFor="let actor of actors; trackBy: trackByName">
     <span>{{ actor.nombre }}</span>
     <span> - {{ actor.personaje }}</span>
   </li>
-  }
 </ul>

@@ -5,11 +5,15 @@ import { Actor } from '../Actor';
   selector: 'app-actor-list',
   standalone: false,
   templateUrl: './actor-list.component.html',
-  styleUrl: './actor-list.component.css',
+  styleUrls: ['./actor-list.component.css'],
 })
 export class ActorListComponent implements OnInit {
   @Input() actors: Actor[] = [];
   constructor() {}
 
   ngOnInit(): void {}
+
+  trackByName(index: number, actor: Actor): string | number {
+    return actor?.nombre ?? index;
+  }
 }

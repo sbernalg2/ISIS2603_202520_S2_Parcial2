@@ -1,10 +1,8 @@
 <div>
   <div>
-    @if (selected) {
     <div *ngIf="selected">
       <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
     </div>
-    }
     <table>
       <thead>
         <tr>
@@ -15,8 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        @for(movie of movies; track movie.id){
-        <tr (click)="onSelect(movie)">
+        <tr *ngFor="let movie of movies; trackBy: trackById" (click)="onSelect(movie)">
           <td>{{ movie.titulo }}</td>
           <td>
             <img
@@ -28,7 +25,6 @@
           <td>{{ movie.duracion_minutos }} min</td>
           <td>{{ movie.director }} </td>
         </tr>
-        }
       </tbody>
     </table>
   </div>
